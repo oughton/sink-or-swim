@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Sink or Swim</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="menu" class="overlay">
+  <div class="panel">
+    <h1>SINK <span>or</span> SWIM</h1>
+    <p class="tag">The unsinkable ship is going down. Swim for the island.<br>Climb icebergs to escape the sharks.</p>
+    <div class="form">
+      <label>Your name <input id="name" maxlength="12" placeholder="Player"></label>
+      <label>Bots
+        <select id="bots">
+          <option value="3">3</option>
+          <option value="5" selected>5</option>
+          <option value="7">7</option>
+        </select>
+      </label>
+      <label>Sharks
+        <select id="diff">
+          <option value="0">Calm waters</option>
+          <option value="1" selected>Shark-infested</option>
+          <option value="2">Feeding frenzy</option>
+        </select>
+      </label>
+    </div>
+    <button id="start">Abandon ship!</button>
+    <div class="howto">
+      <div><b>Move</b> Arrow keys / WASD</div>
+      <div><b>Sprint</b> Shift (uses stamina)</div>
+      <div><b>Jump / climb / hop off</b> Space</div>
+      <div><b>Restart</b> R &nbsp; <b>Mute</b> M</div>
+      <p>Swimming tires you out. Rest on icebergs to get your stamina back, but the sharks will circle and wait for you. Hop off when the coast is clear.</p>
+    </div>
+  </div>
+</div>
+
+<div id="results" class="overlay hidden">
+  <div class="panel">
+    <h2 id="resTitle"></h2>
+    <ol id="resList"></ol>
+    <div class="buttons">
+      <button id="again">Play again</button>
+      <button id="watch" class="secondary">Watch the bots</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #06192b; font-family: "Trebuchet MS", system-ui, sans-serif; color: #eaf6ff; touch-action: none; user-select: none; -webkit-user-select: none; }
+canvas { display: block; }
+
+.overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(3, 14, 26, 0.72); z-index: 10; padding: 16px; }
+.overlay.hidden { display: none; }
+.panel { background: linear-gradient(180deg, #0f3556, #0a2440); border: 2px solid #8fd3f4; border-radius: 16px; padding: 28px 32px; max-width: 520px; width: 100%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.6); max-height: 100%; overflow-y: auto; }
+h1 { font-size: 48px; letter-spacing: 3px; color: #fff; text-shadow: 0 3px 0 #2a7fb3, 0 6px 18px rgba(0,0,0,.5); }
+h1 span { font-size: 26px; color: #ffcf5a; vertical-align: middle; }
+h2 { font-size: 30px; margin-bottom: 14px; }
+.tag { margin: 10px 0 18px; color: #b9dcf2; line-height: 1.4; }
+.form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+label { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-weight: bold; }
+input, select { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid #8fd3f4; background: #06192b; color: #fff; width: 60%; }
+button { font: inherit; font-weight: bold; font-size: 20px; padding: 12px 28px; border-radius: 12px; border: none; background: #ffcf5a; color: #3a2400; cursor: pointer; box-shadow: 0 4px 0 #b88a1c; }
+button:hover { filter: brightness(1.08); }
+button:active { transform: translateY(2px); box-shadow: 0 2px 0 #b88a1c; }
+button.secondary { background: #8fd3f4; color: #06263f; box-shadow: 0 4px 0 #3c8ab0; }
+.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.howto { margin-top: 20px; font-size: 14px; color: #b9dcf2; line-height: 1.6; text-align: left; }
+.howto b { color: #fff; display: inline-block; min-width: 150px; }
+.howto p { margin-top: 8px; }
+#resList { text-align: left; list-style: none; }
+#resList li { display: flex; justify-content: space-between; padding: 6px 10px; border-radius: 8px; margin: 3px 0; background: rgba(255,255,255,.06); }
+#resList li.you { background: rgba(255, 207, 90, .25); font-weight: bold; }
+#resList .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+#resList .status { color: #b9dcf2; }
