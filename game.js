@@ -32,9 +32,9 @@ const DECK_SPEED = 120, SWIM = 100, SPRINT = 165, EXHAUST_SPEED = 50, BERG_WALK 
 const CLIMB_RANGE = 36;
 const SHARK_MINX = 1250, SHARK_MAXX = SHORE_X - 260;
 const DIFFS = [
-  { sharks: 10, patrol: 55, chase: 118, detect: 260, chaseTime: 5.5 },
-  { sharks: 16, patrol: 62, chase: 130, detect: 290, chaseTime: 6.5 },
-  { sharks: 24, patrol: 70, chase: 142, detect: 360, chaseTime: 7.5 },
+  { sharks: 10, patrol: 50, chase: 106, detect: 260, chaseTime: 5.5 },
+  { sharks: 16, patrol: 56, chase: 117, detect: 290, chaseTime: 6.5 },
+  { sharks: 24, patrol: 63, chase: 128, detect: 360, chaseTime: 7.5 },
 ];
 const BOT_NAMES = ['Molly', 'Archie', 'Edith', 'Walter', 'Violet', 'Harold', 'Agnes', 'Bertie', 'Clara', 'Fred', 'Mabel', 'Percy'];
 const COLORS = ['#ff5a5a', '#5ad1ff', '#7dff6a', '#ff9de2', '#b48cff', '#ff9f43', '#00e0b0', '#ffffff'];
@@ -142,10 +142,10 @@ canvas.addEventListener('touchcancel', touchEnd);
 
 function playerInput() {
   let dx = 0, dy = 0;
-  if (keys['arrowleft'] || keys['a']) dx -= 1;
-  if (keys['arrowright'] || keys['d']) dx += 1;
-  if (keys['arrowup'] || keys['w']) dy -= 1;
-  if (keys['arrowdown'] || keys['s']) dy += 1;
+  if (keys['arrowleft']) dx -= 1;
+  if (keys['arrowright']) dx += 1;
+  if (keys['arrowup']) dy -= 1;
+  if (keys['arrowdown']) dy += 1;
   if (touch.id !== null && Math.hypot(touch.dx, touch.dy) > 0.2) { dx = touch.dx; dy = touch.dy; }
   const l = Math.hypot(dx, dy);
   if (l > 1) { dx /= l; dy /= l; }
@@ -581,14 +581,14 @@ function updateShark(sh, dt) {
       sh.orbitA += sh.orbitDir * (80 / R) * dt;
       const a = sh.orbitA + sh.orbitDir * 0.5;
       tx = b.x + Math.cos(a) * R; ty = b.y + Math.sin(a) * R;
-      speed = 80; turn = 3;
+      speed = 72; turn = 3;
       if (sh.think <= 0) { sh.think = 0.3; const t = findPrey(sh, 300); if (t) { startChase(sh, t); break; } }
       if (sh.timer <= 0) { sh.state = 'patrol'; sh.ignoreT = 4; newWander(sh); const [ax, ay] = norm(sh.x - b.x, sh.y - b.y); sh.wx = clamp(b.x + ax * 600, SHARK_MINX, SHARK_MAXX); sh.wy = clamp(b.y + ay * 600, 100, WORLD_H - 100); sh.berg = null; }
       break;
     }
     case 'retreat': {
       tx = sh.x + Math.cos(sh.angle) * 100; ty = sh.y + Math.sin(sh.angle) * 100;
-      speed = 110;
+      speed = 100;
       if (sh.timer <= 0) { sh.state = 'patrol'; newWander(sh); }
       break;
     }

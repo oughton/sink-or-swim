@@ -8,7 +8,7 @@ A browser game: the ship is sinking, so jump overboard and swim for the island. 
 
 | Action | Keyboard | Touch |
 | --- | --- | --- |
-| Move | Arrow keys / WASD | Drag anywhere on the left |
+| Move | Arrow keys | Drag anywhere on the left |
 | Sprint (uses stamina) | Shift | SPRINT button |
 | Jump overboard / climb iceberg / hop off | Space | JUMP button |
 | Restart | R | |
